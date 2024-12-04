@@ -3751,7 +3751,7 @@ cout << "2769" << endl;
         pcl::PointCloud<PointType>::Ptr fullDS(new pcl::PointCloud<PointType>());
         ds_filter_surf_map.setInputCloud(full_cloud);
         ds_filter_surf_map.filter(*fullDS);
-//        full_clouds_ds.push_back(fullDS);
+        full_clouds_ds.push_back(fullDS);
 
         surf_last_ds->clear();
         ds_filter_surf.setInputCloud(surf_last);

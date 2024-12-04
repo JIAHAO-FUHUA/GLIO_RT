@@ -83,6 +83,9 @@ Ubuntu 64-bit 18.04, ROS Melodic. [ROS Installation](http://wiki.ros.org/ROS/Ins
 sudo apt-get install ros-melodic-novatel-msgs
 sudo apt-get install ros-melodic-rtcm-msgs
 ```
+or 
+git clone https://github.com/ros-drivers/novatel_span_driver
+
 
 ### 5. **Pre-built Libraries**
 [GraphGNSSLib V1.1](https://github.com/weisongwen/GraphGNSSLib.git) and [gnss_comm](https://github.com/HKUST-Aerial-Robotics/gnss_comm.git) is pre-built in the package.
