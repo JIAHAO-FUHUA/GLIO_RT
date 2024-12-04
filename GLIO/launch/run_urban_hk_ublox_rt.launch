@@ -1,0 +1,24 @@
+<launch>
+    
+    <!--- Sim Time -->
+    <param name="/use_sim_time" value="false" />
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rviz_GLIO" args="-d $(find GLIO)/config/test.rviz" />
+
+    <!-- Parameters -->
+    <rosparam file = "$(find GLIO)/config/config_urban_hk.yaml"/>
+    
+    <node pkg="tf" type="static_transform_publisher" name="GLIO" args="0 0 0 0 0 0 base_link GLIO 50"/>
+
+    <!--- GLIO -->
+    <node pkg="GLIO" type="UbloxRos" name="UbloxRos" output="screen"/>
+    <node pkg="GLIO" type="Preprocessing" name="Preprocessing" output="screen"/>
+    <node pkg="GLIO" type="LidarOdometry" name="LidarOdometry" output="screen"/>
+    <node pkg="GLIO" type="Estimator" name="Estimator" output="screen">
+    <param name="result_path" type="string" value="$(find GLIO)/../result/"/>
+    </node>
+
+    
+
+</launch>
